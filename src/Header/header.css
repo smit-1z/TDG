@@ -1,0 +1,139 @@
+@media screen and (min-width: 480px) {
+
+    .center-align{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .center-align .table{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+    }
+    .center-align .tr{
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+    }
+    .center-align .td{
+        display: flex;
+        flex-flow: row wrap;
+        flex-wrap: wrap;
+        overflow-wrap: break-word;
+    }
+    .center-align .th{
+        display: flex;
+        flex-flow: row wrap;
+        flex-wrap: wrap;
+    }
+    .menuItems{
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .li{
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+
+}
+
+@media screen and (max-width: 890px) {
+
+    .menuItems{
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .li{
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .sub-header{
+        height: 8vh;
+        width: 100%;
+        position: sticky;
+        color: white;
+        background-color: darkslategray;
+        padding-top: 05px;
+        padding-bottom: 4em;
+        text-align: left; 
+    }
+    .nav .li:nth-child(4) {
+        margin-left: auto;
+    }
+
+}
+
+.nav{
+    display: flex;
+    padding: 0.5em 1em;
+    flex-direction:  row;
+    justify-content: space-between;
+    align-items: center;
+}
+/*
+nav img{
+    width: 150px;
+}*/
+
+.nav-links{
+    flex: 1;
+    text-align: left;
+}
+
+.nav-links .ul .li{
+    list-style: none;
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    padding-top: 0.2em;
+    position: relative;
+}
+
+.nav-links .ul .li a{
+    color: white;
+    text-decoration: none;
+    font-size: medium;
+}
+
+
+.nav-links .ul .li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f4db36;
+    display: flex;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links .ul .li:hover::after{
+    width: 100%;
+}
+
+.nav{
+    height: 8vh;
+    width: 100%;
+    position: sticky;
+    color: white;
+    background-color: darkslategray;
+    padding-top: 05px;
+    text-align: center; 
+}  
+.sub-header{
+    height: 8vh;
+    width: 100%;
+    position: sticky;
+    color: white;
+    background-color: darkslategray;
+    padding-top: 05px;
+    text-align: center; 
+}  
