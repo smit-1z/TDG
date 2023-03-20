@@ -44,7 +44,7 @@ export function Login() {
                     </form>
                     
                     {/* <!-- End of the login form --> */}
-                    <h3>Dont have an account?....<a href="new_signup.html">Signup here</a></h3>
+                    <h3>Dont have an account?....<a href="/NewSignup">Signup here</a></h3>
                     
         <div className="logfor-input-group">  
             <button><Link  to ='/ResidentDashboard' style={{ textDecoration: 'none', color: 'white' }}>Resident</Link></button>
