@@ -22,7 +22,7 @@ export function AboutUs() {
             <div className="about">
                 <h1>ABOUT US </h1>
                 <p> Terrazas de Guacuco is a resident complex.
-                This is the modern residency with all modern amenities.
+                This is the modern residency with all modern amenities included.
                 TDG is a visitor friendly community.It has the proper maps with the directions on it so visitors will not have any kind of inconvenience.</p>
                 <Link to ='/' className='hero-button'>LEARN MORE</Link>
             </div>
