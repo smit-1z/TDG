@@ -191,4 +191,23 @@ nav img{
     min-height: 20vh;
     /* text-align: center; */
 }
+
+@media (max-width:780px){
+    body{
+        display: table-row;
+        justify-content: center;
+        align-items: center;
+    }
+    .logfor-right{
+        display: none;
+        background-color: bisque;
+    }
+    .logfor-containers{
+        width:100%;
+        margin: none;
+    }
+    .logfor-containers p,h1{
+        display: none;
+    }
+}
 /* End of heander and navigationbar css */

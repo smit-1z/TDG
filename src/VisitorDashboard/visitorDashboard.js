@@ -112,8 +112,7 @@ export function VisitorDashboard() {
 
                     {/* ---------------------Map over here----------------------------------- */}
 
-                    {/* <h6>Driving Directions</h6> */}
-                    {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1678.1310008554017!2d-97.12172874191167!3d32.73223299524639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e7d0e6ef229bf%3A0x70a5eb6cc76c21e1!2sMeadow%20Run%2C%20501%20Summit%20Ave%2C%20Arlington%2C%20TX%2076013!5e0!3m2!1sen!2sus!4v1676672885147!5m2!1sen!2sus" width="1400" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
+                    
                 </div>
 
                 <h6>Timings</h6>
@@ -144,6 +143,9 @@ export function VisitorDashboard() {
                         <div className='td'>11:00 AM</div>
                     </div>
                 </div>
+
+                <h6>Driving Directions</h6>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1678.1310008554017!2d-97.12172874191167!3d32.73223299524639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e7d0e6ef229bf%3A0x70a5eb6cc76c21e1!2sMeadow%20Run%2C%20501%20Summit%20Ave%2C%20Arlington%2C%20TX%2076013!5e0!3m2!1sen!2sus!4v1676672885147!5m2!1sen!2sus" width="1400" height="800"  allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </main>
         <Chat/>

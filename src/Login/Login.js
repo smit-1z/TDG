@@ -51,7 +51,7 @@ export function Login() {
             <button><Link to ='/VisitorDashboard' style={{ textDecoration: 'none', color: 'white' }}>Visitor</Link></button>
             <button><Link to ='/TennisManager' style={{ textDecoration: 'none', color: 'white' }}>Tennis Manager</Link></button>
             <button><Link to ='/PoolManager' style={{ textDecoration: 'none', color: 'white' }}>Pool Manager</Link></button>
-            <button><Link to ='/BuildingManager' style={{ textDecoration: 'none', color: 'white' }}>Building Manager</Link></button>
+            <button><Link to ='/BuildingManagerDashboard' style={{ textDecoration: 'none', color: 'white' }}>Building Manager</Link></button>
             <button><Link to ='/GardenManager' style={{ textDecoration: 'none', color: 'white' }}>Garden Manager</Link></button>
             <button><Link to ='/SecurityManager' style={{ textDecoration: 'none', color: 'white' }}>Security Manager</Link></button>   
             {/* <button><Link to ='/Gym' style={{ textDecoration: 'none', color: 'white' }}>Gym Manager</Link></button> */}
