@@ -43,6 +43,8 @@ import {AddViolation} from './AddViolation/AddViolation.js';
 import { AddManagerForm } from './AddManagerForm/AddManagerForm';
 import { EditGardenTiming } from './EditGardenTiming/EditGardenTiming';
 import { AddHost} from './AddHost/addHost';
+import { Report} from './Report/Report';
+
 
 
 
@@ -90,6 +92,8 @@ function App() {
         <Route path="/addViolation" element={<AddViolation/>}/>
         <Route path="/addManagerForm" element={<AddManagerForm/>}/>
         <Route path="/addHost" element={<AddHost/>}/>
+        <Route path="/Report" element={<Report/>}/>
+
     </Routes>
   );
 }
