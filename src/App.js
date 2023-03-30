@@ -1,13 +1,10 @@
-// import logo from './logo.svg';
 import { Route,Routes } from 'react-router-dom';
 import {Home} from './Home/home';
 import {AboutUs} from './AboutUs/AboutUs';
 import Chat from './Chat/Chat';
 import Nav from './Nav/Nav';
-
 import {VisitorDashboard} from './VisitorDashboard/visitorDashboard';
 import {VehicleRegistrationForm} from './VehicleRegistrationForm/VehicleRegistrationForm';
-// import {VehicleForm} from './VehicleForm/VehicleForm';
 import {TennisMembershipForm} from './TennisMembershipForm/TennisMembershipForm';
 import {TennisManager} from './TennisManager/TennisManager';
 import {TennisMaintenance} from './TennisMaintenance/TennisMaintenance';
@@ -36,7 +33,6 @@ import {Contact} from './Contact/Contact';
 import {BuildingManagerDashboard} from './BuildingManagerDashboard/BuildingManagerDashboard';
 import {BookingForm} from './BookingForm/BookingForm';
 import {Amenities} from './Amenities/Amenities';
-// import {BookingForm} from './BookingForm/BookingForm';
 import {AddWatchman} from './AddWatchman/AddWatchman';
 import {AddVisitor} from './AddVisitor/AddVisitor';
 import {AddViolation} from './AddViolation/AddViolation.js';
@@ -45,16 +41,12 @@ import { EditGardenTiming } from './EditGardenTiming/EditGardenTiming';
 import { AddHost} from './AddHost/addHost';
 import { Report} from './Report/Report';
 
-
-
-
 function App() {
   return (
     <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/" element={<Chat/>}/>
         <Route path="/" element={<Nav/>}/>
-
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/visitorDashboard" element={<VisitorDashboard/>}/>
         <Route path="/vehicleRegistrationForm" element={<VehicleRegistrationForm/>}/>
@@ -93,7 +85,6 @@ function App() {
         <Route path="/addManagerForm" element={<AddManagerForm/>}/>
         <Route path="/addHost" element={<AddHost/>}/>
         <Route path="/Report" element={<Report/>}/>
-
     </Routes>
   );
 }
