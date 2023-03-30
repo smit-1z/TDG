@@ -1,16 +1,5 @@
-// import logo from './logo.svg';
-/* 
-KETA MODI - 1001947989
-HELLY SHUKLA - 1002028499
-AVISH MODI - 1002069301
-RIDHAM TELI - 1002091174 
-SMIT JOSHI - 1001946718*/
-
 import './header.css';
 import {Link, NavLink} from 'react-router-dom';
-
-
-
 export function Header() {
   return (
     <div>
@@ -29,19 +18,12 @@ export function Header() {
                         <div className='li'><NavLink to="/Login">LOGIN</NavLink></div>
                         <div className='li'><NavLink to="/NewSignUP">SIGNUP</NavLink></div>
                         <div className='li'><NavLink to="http://sxj6718.uta.cloud/">BLOG</NavLink></div>
-                        
                         {/* <div className='li'><a href="ResidentDashboard.html">DASHBOARD</a></div> */}
-                        <div className='li'><a href="">LOGOUT</a></div>
-                        
+                        <div className='li'><NavLink to="/Login">LOGOUT</NavLink></div>
                     </div>
-
                 </div>
-                
             </div>
         </div> 
-        
     </div>
   );
 }
-
-// export default residentDashboard;
