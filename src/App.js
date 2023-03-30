@@ -86,6 +86,7 @@ function App() {
         <Route path="/addHost" element={<AddHost/>}/>
         <Route path="/Report" element={<Report/>}/>
     </Routes>
+    
   );
 }
 
