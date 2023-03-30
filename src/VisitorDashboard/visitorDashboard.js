@@ -112,7 +112,6 @@ export function VisitorDashboard() {
 
                     {/* ---------------------Map over here----------------------------------- */}
 
-                    
                 </div>
 
                 <h6>Timings</h6>
