@@ -79,7 +79,6 @@ export function NewSignup() {
               <label className="form-label" htmlFor="username">Username<span className="form-required"> *</span></label>
               <input onChange={handleChange} id="username" className="form-input" type="text" name="username" placeholder="abc123" required/>
             </fieldset>
-Ghisi modi like Axu patel . 
             <fieldset>
               <label className="form-label" htmlFor="dob">DOB<span className="form-required"> *</span></label>
               <input onChange={handleChange} id="occupantdob" className="form-input" type="date" name="occupantdob" placeholder="05/31/2001" required/>
