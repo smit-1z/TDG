@@ -7,8 +7,31 @@ RIDHAM TELI - 1002091174
 SMIT JOSHI - 1001946718*/
 import './newSignup.css';
 import { Header } from '../Header/header';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export function NewSignup() {
+  const navigate=useNavigate();
+  const [inputs,setInputs] = useState({});
+  const handleChange = (event) => {
+    const name=event.target.name;
+    const value=event.target.value;
+    setInputs(values => ({...values,[name]:value}));
+  }
+
+  const sumbitHandle = (event) => {
+    event.preventDefault();
+    axios.post("http://localhost/api/user/save",inputs).then(function(response){
+      console.log(response.data);
+      navigate('/login');
+
+    });
+  }
+  // useEffect(()=>{
+  //   fetch('http://localhost/TDG-server/index.php/employees').then(res=>res.json()).then(data=>console.log(data))
+
+  // },[])
   return (
     <div>
     {/* <!-- Start of the header --> */}
@@ -40,61 +63,61 @@ export function NewSignup() {
         {/* <!-- Code for the REgistration form --> */}
       <div className="form-box">
         <div className='form'>
-          <form name="form" action="" method="post">
+          <form name="form" action="" method="post" onSubmit={sumbitHandle}>
             <div className="two-columns">
               <fieldset>
                 <label className="form-label" htmlFor="first-name">First name<span className="form-required"> *</span></label>
-                <input id="first-name" className="form-input" type="text" name="first-name" placeholder="first name" required/>
+                <input onChange={handleChange} id="firstname" className="form-input" type="text" name="firstname" placeholder="first name" required/>
               </fieldset>
 
               <fieldset>
                 <label className="form-label" htmlFor="last-name">Last name<span className="form-required"> *</span></label>
-                <input id="last-name" className="form-input" type="text" name="last-name" placeholder="last name" required/>
+                <input onChange={handleChange} id="lastname" className="form-input" type="text" name="lastname" placeholder="last name" required/>
               </fieldset>
             </div>
             <fieldset>
               <label className="form-label" htmlFor="username">Username<span className="form-required"> *</span></label>
-              <input id="last-name" className="form-input" type="text" name="username" placeholder="abc123" required/>
+              <input onChange={handleChange} id="username" className="form-input" type="text" name="username" placeholder="abc123" required/>
             </fieldset>
-
+Ghisi modi like Axu patel . 
             <fieldset>
               <label className="form-label" htmlFor="dob">DOB<span className="form-required"> *</span></label>
-              <input id="dob" className="form-input" type="date" name="occupant-dob" placeholder="05/31/2001" required/>
+              <input onChange={handleChange} id="occupantdob" className="form-input" type="date" name="occupantdob" placeholder="05/31/2001" required/>
             </fieldset> 
 
             <fieldset>
               <label className="form-label" htmlFor="gender">Gender<span className="form-required"> *</span></label>
-              <input id="gender" className="form-input" type="text" name="gender" placeholder="Gender" required/>
+              <input onChange={handleChange} id="gender" className="form-input" type="text" name="gender" placeholder="Gender" required/>
             </fieldset>
             
             <fieldset>
               <label className="form-label" htmlFor="email">Email address<span></span></label>
-              <input id="email" className="form-input" type="email" name="email" placeholder="Email@gmail.com" required/>
+              <input onChange={handleChange} id="email" className="form-input" type="email" name="email" placeholder="Email@gmail.com" required/>
             </fieldset>
 
             <fieldset>
               <label className="form-label" htmlFor="mobile">Mobile No<span></span></label>
-              <input id="email" className="form-input" type="text" name="occupant-mobile" placeholder="Enter mobile no" required/>
+              <input onChange={handleChange} id="occupant_mobile" className="form-input" type="text" name="occupant_mobile" placeholder="Enter mobile no" required/>
             </fieldset>
 
-            <fieldset>
+            {/* <fieldset>
               <label className="form-label" htmlFor="relation">Relation<span className="form-required"> *</span></label>
-              <input id="relation" className="form-input" type="text" name="your-relation" placeholder="Enter relation with occupant" required/>
-            </fieldset>
+              <input id="relation" className="form-input" type="text" name="your_relation" placeholder="Enter relation with occupant" required/>
+            </fieldset> */}
             <fieldset>
               <label className="form-label" htmlFor="password">Password<span className="form-required"> *</span></label>
-              <input id="last-name" className="form-input" type="password" name="password" placeholder="#####" required/>
+              <input onChange={handleChange} id="pass1" className="form-input" type="password" name="pass2" placeholder="#####" required/>
             </fieldset>
             <fieldset>
               <label className="form-label" htmlFor="password">Confirm Password<span className="form-required"> *</span></label>
-              <input id="last-name" className="form-input" type="password" name="password" placeholder="#####" required/>
+              <input onChange={handleChange} id="pass2" className="form-input" type="password" name="pass2" placeholder="#####" required/>
             </fieldset>
 
             {/* <!-- Dropdown for role selection --> */}
 
             <fieldset>
                 <label className="form-label" htmlFor="role">Choose a Role<span className="form-required"> *</span></label>
-                <select name = "Role" className= "form-input" id ="role" required>
+                <select name = "Role1" className= "form-input" id ="role" onChange={handleChange} required>
                   <option value="Resident">Resident</option>
                   <option value="Renter">Renter</option>
                   <option value="Visitor">Visitor</option>
@@ -107,7 +130,7 @@ export function NewSignup() {
 
             {/* <!-- Add and Cancel buttons --> */}
             <div className="two-columns">
-              <button className="form-btn" type="submit">Add</button>
+              <button  className="form-btn" type="submit">Add</button>
               <button className="form-btn" type="reset">Cancel</button>
             </div>
             

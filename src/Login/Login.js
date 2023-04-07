@@ -9,9 +9,24 @@ import './log-for.css';
 import { Header } from '../Header/header';
 import { Link } from 'react-router-dom';
 import tdg1 from "../images/TDG.png";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 
 export function Login() {
+
+    const [members,setMembers]=useState({});
+
+    useEffect(()=>{
+        getMembers();
+    },[]);
+    function getMembers(){
+        axios.get("http://localhost/api/signup/").then(function(response){
+            console.log(response.data);
+            setMembers(response.data);
+        });
+    }
+
   return (
     <div>
         <Header/>
