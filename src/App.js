@@ -85,10 +85,7 @@ function App() {
         <Route path="/addManagerForm" element={<AddManagerForm/>}/>
         <Route path="/addHost" element={<AddHost/>}/>
         <Route path="/Report" element={<Report/>}/>
-    </Routes>
-    
-
-    
+    </Routes>    
   );
 }
 
