@@ -6,6 +6,8 @@ import Chat from '../Chat/Chat';
 export function PoolMaintenance() {
   return (
     <div>
+
+      
       <link rel="stylesheet" href="https://demo.plantpot.works/assets/css/normalize.css"></link>
       <link rel="stylesheet" href="https://use.typekit.net/opg3wle.css"></link>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
