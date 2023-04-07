@@ -22,7 +22,7 @@ export function NewSignup() {
 
   const sumbitHandle = (event) => {
     event.preventDefault();
-    axios.post("http://localhost/api/user/save",inputs).then(function(response){
+    axios.post("http://localhost/api/index/user/save",inputs).then(function(response){
       console.log(response.data);
       navigate('/login');
 
