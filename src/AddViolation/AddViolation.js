@@ -8,9 +8,29 @@ SMIT JOSHI - 1001946718*/
 import './occupantform.css';
 import { Header } from '../Header/header';
 import Chat from '../Chat/Chat';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 
 export function AddViolation() {
+    const navigate=useNavigate();
+    const [inputs,setInputs] = useState({});
+    const handleChange = (event) => {
+      const name=event.target.name;
+      const value=event.target.value;
+      setInputs(values => ({...values,[name]:value}));
+    }
+  
+    const sumbitHandle = (event) => {
+      event.preventDefault();
+      axios.post("http://localhost/api/user/save",inputs).then(function(response){
+        console.log(response.data);
+        // navigate('/ResidentDashboard');
+  
+      });
+    }
   return (
     <div>
         
@@ -25,40 +45,40 @@ export function AddViolation() {
         <div id="container">
             <div className="form-box">
                 <div className='form'>
-                    <form name="form" action="" method="post">
+                    <form name="form" action="" method="post" onSubmit={sumbitHandle}>
                         <div className="two-columns">
                             <fieldset>
                                 <label className="form-label" for="reqNo">Resident ID<span className="form-required"> *</span></label>
-                                <input id="reqNo" className="form-input" type="text" name="reqNo" placeholder="Enter Wachman ID" required/>
+                                <input onChange={handleChange} id="reqNo" className="form-input" type="text" name="reqNo" placeholder="Enter Wachman ID" required/>
                             </fieldset>
 
                             <fieldset>
                                 <label className="form-label" for="first-name">First Name<span className="form-required"> </span></label>
-                                <input id="first-name" className="form-input" type="text" name="occupant-first-name" placeholder="Enter First Name"
+                                <input onChange={handleChange} id="first-name" className="form-input" type="text" name="occupant_firstname" placeholder="Enter First Name"
                                     required/>
                             </fieldset>
 
                             <fieldset>
                                 <label className="form-label" for="last-name">Last Name<span className="form-required"> </span></label>
-                                <input id="last-name" className="form-input" type="text" name="occupant-last-name" placeholder="Enter Last Name"
+                                <input onChange={handleChange} id="last-name" className="form-input" type="text" name="occupant_lastname" placeholder="Enter Last Name"
                                     required/>
                             </fieldset>
 
                             <fieldset>
                                 <label className="form-label" for="email">Email ID<span className="form-required"> </span></label>
-                                <input id="email" className="form-input" type="email" name="email" placeholder="Enter Email ID"
+                                <input onChange={handleChange} id="email" className="form-input" type="email" name="email" placeholder="Enter Email ID"
                                     required/>
                             </fieldset>
 
                             <fieldset>
                                 <label className="form-label" for="d-o-v">Date of Violation<span className="form-required"> </span></label>
-                                <input id="d-o-v" className="form-input" type="date" name="date-of-v" placeholder="Enter Date of Violation (MM/DD/YY)"
+                                <input onChange={handleChange} id="d-o-v" className="form-input" type="date" name="date_of_v" placeholder="Enter Date of Violation (MM/DD/YY)"
                                     required/>
                             </fieldset>
 
                             <fieldset>
                                 <label className="form-label" for="des">Violation Description<span className="form-required"> </span></label>
-                                <input id="des" className="form-input" type="text" name="des" placeholder="Violation Description"
+                                <input onChange={handleChange} id="des" className="form-input" type="text" name="des" placeholder="Violation Description"
                                     required/>
                             </fieldset>
                         </div>

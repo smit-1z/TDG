@@ -2,8 +2,27 @@
 import './occupantform.css';
 import { Header } from '../Header/header';
 import Chat from '../Chat/Chat';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export function PoolMaintenance() {
+  const navigate=useNavigate();
+  const [inputs,setInputs] = useState({});
+  const handleChange = (event) => {
+    const name=event.target.name;
+    const value=event.target.value;
+    setInputs(values => ({...values,[name]:value}));
+  }
+
+  const sumbitHandle = (event) => {
+    event.preventDefault();
+    axios.post("http://localhost/api/user/save",inputs).then(function(response){
+      console.log(response.data);
+      navigate('/PoolManager');
+
+    });
+  }
   return (
     <div>
 
@@ -19,27 +38,28 @@ export function PoolMaintenance() {
       <div id="container">
         <div className="form-box">
           <div className='form'>
-            <form name="form" action="" method="post">
+            <form name="form" action="" method="post" onSubmit={sumbitHandle}>
               <div className="two-columns">
                 <fieldset>
                   <label className="form-label" for="first-name">First name<span className="form-required"> *</span></label>
-                  <input id="first-name" className="form-input" type="text" name="first-name" placeholder="Enter your first name" required/>
+                  <input onChange={handleChange} id="first-name" className="form-input" type="text" name="firstname" placeholder="Enter your first name" required/>
                 </fieldset>
 
                 <fieldset>
                   <label className="form-label" for="last-name">Last name<span className="form-required"> *</span></label>
-                  <input id="last-name" className="form-input" type="text" name="last-name" placeholder="Enter your last name" required/>
+                  <input onChange={handleChange} id="last-name" className="form-input" type="text" name="lastname" placeholder="Enter your last name" required/>
                 </fieldset>
               </div>
 
               <fieldset>
                 <label className="form-label" for="email">Email Address<span className="form-required"> *</span></label>
-                <input id="email" className="form-input" type="email" name="email" placeholder="Email@gmail.com" required/>
+                <input onChange={handleChange} id="email" className="form-input" type="email" name="email" placeholder="Email@gmail.com" required/>
               </fieldset>
 
               <fieldset>
                 <label className="form-label" for="maintenance">Maintenance Type<span className="form-required"> *</span></label>
-                <select name = "maintenance" className= "form-input" id ="maintenance" required>
+                <select onChange={handleChange} name = "maintenance" className= "form-input" id ="maintenance" required>
+                <option value=" " className ="form-input"></option>
                   <option value="BasicPoolCleaning " className ="form-input">Basic Pool Cleaning</option>
                   <option value="HandheldPoolVaccum" className="form-input">Handheld Pool Vacuum Cleaning</option>
                   <option value="PressurePoolVaccum" className="form-input">Pressure Pool Vaccum Cleaning</option>
@@ -50,17 +70,17 @@ export function PoolMaintenance() {
 
               <fieldset>
                   <label className="form-label" for="description">Description</label>
-                  <input id="description" className="form-input" type="text" name="description" placeholder="Enter Description" required/>
+                  <input onChange={handleChange} id="description" className="form-input" type="text" name="description" placeholder="Enter Description" required/>
                 </fieldset>
 
               <fieldset>
                 <label className="form-label" for="date">Date<span className="form-required"> *</span></label>
-                <input id="date" className="form-input" type="date" name="date" placeholder="05/31/2001" required/>
+                <input onChange={handleChange} id="date" className="form-input" type="date" name="date" placeholder="05/31/2001" required/>
               </fieldset>
 
               <fieldset>
                 <label className="form-label" for="time">Time<span className="form-required"> *</span></label>
-                <input id="time" className="form-input" type="time" name="time" required/>
+                <input onChange={handleChange} id="time" className="form-input" type="time" name="time" required/>
               </fieldset>
 
               <div className="two-columns">

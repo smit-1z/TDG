@@ -21,12 +21,26 @@ export function NewSignup() {
   }
 
   const sumbitHandle = (event) => {
+    var hasDigit=/\d/;
     event.preventDefault();
-    axios.post("http://localhost/api/index/user/save",inputs).then(function(response){
+    console.log(event.target)
+    if (event.target.pass1.value!=event.target.pass2.value){
+      alert("Password should match")
+    }else if(event.target.occupant_mobile.value.length!=10){
+      alert("the mobile number should contain 10 digits")
+    }
+    else if(hasDigit.test(event.target.username.value)===false){
+      alert("The username should have digits in it")
+
+    }
+    else{
+    console.log("done")
+    axios.post("http://localhost/api/user/save",inputs).then(function(response){
       console.log(response.data);
-      navigate('/login');
+      // navigate('/login');
 
     });
+  }
   }
   // useEffect(()=>{
   //   fetch('http://localhost/TDG-server/index.php/employees').then(res=>res.json()).then(data=>console.log(data))
@@ -105,7 +119,7 @@ export function NewSignup() {
             </fieldset> */}
             <fieldset>
               <label className="form-label" htmlFor="password">Password<span className="form-required"> *</span></label>
-              <input onChange={handleChange} id="pass1" className="form-input" type="password" name="pass2" placeholder="#####" required/>
+              <input onChange={handleChange} id="pass1" className="form-input" type="password" name="pass1" placeholder="#####" required/>
             </fieldset>
             <fieldset>
               <label className="form-label" htmlFor="password">Confirm Password<span className="form-required"> *</span></label>
